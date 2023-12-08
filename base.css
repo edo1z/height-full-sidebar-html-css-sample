@@ -67,3 +67,42 @@ table {
     display: block;
     height: 60px;
 }
+
+/* メニューボタンのスタイル */
+.menu-button {
+    display: none; /* 最初は非表示にする */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* スマホサイズのときのスタイル */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        width: 80%; /* 画面の8割 */
+        height: 100%;
+        right: -80%; /* 右側から出てくるように初期位置を設定 */
+        transition: right 0.3s; /* アニメーションのための設定 */
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .menu-button {
+        display: block; /* メニューボタンを表示する */
+    }
+
+    /* サイドバー表示時のスタイル */
+    .show-sidebar .sidebar {
+        right: 0; /* サイドバーを表示 */
+    }
+
+    .show-sidebar .menu-button {
+        /* ここでメニューボタンのスタイルを変更して「閉じる」を表現する */
+    }
+}
