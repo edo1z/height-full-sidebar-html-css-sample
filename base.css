@@ -3,11 +3,17 @@ body, html {
     padding: 0;
     height: 100%;
     color: #fff;
+    box-sizing: border-box; /* 追加 */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* 追加 */
 }
 
 .container {
     display: flex;
-    height: 100%;
+    min-height: 100%;
+    width: 100%; /* 追加 */
 }
 
 .sidebar {
@@ -16,17 +22,34 @@ body, html {
     max-width: 300px;
     min-width: 200px;
     overflow: auto;
+    padding-bottom: 60px; /* 追加: フッターの高さ分の余白を追加 */
 }
 
 .main-content {
     background-color: #333;
     flex: 1;
     overflow: auto;
+    padding-bottom: 60px; /* 追加: フッターの高さ分の余白を追加 */
+}
+
+.sidebar-footer, .main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* 'inherit' から '100%' に変更 */
+    padding: 10px;
+    background-color: #222;
+    z-index: 10;
+}
+
+.sidebar-footer img {
+    height: 50px;
+    width: 50px;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    margin-bottom: 60px; /* 追加: フッターの高さ分の余白を確保 */
 }
 
 li a {
@@ -36,4 +59,11 @@ li a {
 
 table {
     width: 100%;
+}
+
+/* フッターの高さ分のスペースを確保 */
+.main-content::after, .sidebar::after {
+    content: "";
+    display: block;
+    height: 60px;
 }
