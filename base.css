@@ -1,0 +1,38 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #111;
+    flex: 0 0 20%;
+    max-width: 300px;
+    overflow: auto;
+}
+
+.main-content {
+    background-color: #333;
+    flex: 1;
+    overflow: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+}
