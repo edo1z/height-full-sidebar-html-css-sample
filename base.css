@@ -3,11 +3,11 @@ body, html {
     padding: 0;
     height: 100%;
     color: #fff;
-    box-sizing: border-box; /* 追加 */
+    box-sizing: border-box;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit; /* 追加 */
+    box-sizing: inherit;
 }
 
 .container {
@@ -23,7 +23,11 @@ body, html {
     max-width: 300px;
     min-width: 200px;
     overflow: auto;
-    padding-bottom: 60px; /* 追加: フッターの高さ分の余白を追加 */
+    height: auto;
+}
+.sidebar-content {
+    min-height: calc(100vh - 24px);
+    overflow-y: auto;
 }
 
 .main-content {
@@ -38,7 +42,11 @@ body, html {
     height: 100%;
 }
 
-.sidebar-footer, .main-footer {
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.main-footer {
     position: fixed;
     bottom: 0;
     width: 100%; /* 'inherit' から '100%' に変更 */
@@ -67,8 +75,7 @@ table {
     width: 100%;
 }
 
-/* フッターの高さ分のスペースを確保 */
-.main-content::after, .sidebar::after {
+.main-content::after {
     content: "";
     display: block;
     height: 60px;
